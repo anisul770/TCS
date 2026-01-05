@@ -14,7 +14,7 @@ class Cart(models.Model):
         return f"Cart of {self.user.first_name}"
     
 class CartItem(models.Model):
-    cart = models.ForeignKey(Cart,on_delete=models.CASCADE,related_name='cart')
+    cart = models.ForeignKey(Cart,on_delete=models.CASCADE,related_name='items')
     service = models.ForeignKey(Service,on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField()
     
