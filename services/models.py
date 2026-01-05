@@ -15,7 +15,6 @@ class Service(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10,decimal_places=2) 
     category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='services')
-    avg_rating = models.FloatField(max_length=2,validators=[MinValueValidator(0),MaxValueValidator(5)],default=0)
     is_active = models.BooleanField(default=True)
     
     def __str__(self):

@@ -136,8 +136,11 @@ STATIC_URL = "static/"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+FIXTURE_DIRS = [BASE_DIR / 'fixtures']
+
 REST_FRAMEWORK = {
+    # 'COERCE_DECIMAL_TO_STRING' : False,
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    
+
 }

@@ -1,0 +1,146 @@
+[
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "customer1@example.com",
+      "first_name": "Sarah",
+      "last_name": "Miller",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-01-01T12:00:00Z",
+      "bio": "Busy mom of three looking for weekly deep cleaning.",
+      "phone_number": "+1234567890",
+      "facebook_link": "https://facebook.com/sarahm"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "james.wilson@test.com",
+      "first_name": "James",
+      "last_name": "Wilson",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "Love a tidy home, especially the kitchen area.",
+      "phone_number": "+1987654321"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "emma.davis@web.com",
+      "first_name": "Emma",
+      "last_name": "Davis",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "Regular customer for window and glass cleaning.",
+      "phone_number": "+1555010203"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "robert_p@demo.com",
+      "first_name": "Robert",
+      "last_name": "Patel",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "Pet owner, needs frequent upholstery cleaning.",
+      "phone_number": "+1444999888"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "linda.k@cleaningfans.com",
+      "first_name": "Linda",
+      "last_name": "Kim",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "Eco-friendly cleaning enthusiast.",
+      "phone_number": "+1222333444"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "david_choi@testmail.com",
+      "first_name": "David",
+      "last_name": "Choi",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "Moved into a new apartment, needed a one-time scrub.",
+      "phone_number": "+1777888999"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "sophie.walker@provider.com",
+      "first_name": "Sophie",
+      "last_name": "Walker",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "I work from home and love a clean office space.",
+      "phone_number": "+1112223333"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "michael_b@company.org",
+      "first_name": "Michael",
+      "last_name": "Brown",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "Outdoor patio cleaning is my main priority.",
+      "phone_number": "+1999000111"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "clara.s@example.net",
+      "first_name": "Clara",
+      "last_name": "Smith",
+      "is_staff": false,
+      "is_active": true,
+      "bio": "I use the laundry services every two weeks.",
+      "phone_number": "+1888777666"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$your_hashed_password_here",
+      "email": "tom_hardy@cleaning.com",
+      "first_name": "Tom",
+      "last_name": "Hardy",
+      "is_staff": true,
+      "is_active": true,
+      "bio": "Professional cleaner interested in quality assurance.",
+      "phone_number": "+1666555444"
+    }
+  }
+]

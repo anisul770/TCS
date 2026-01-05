@@ -63,7 +63,7 @@
       "description": "Removing dust from all surfaces, frames, and fans.",
       "price": "50.00",
       "category": 1,
-      "avg_rating": 4.5,
+       
       "is_active": true
     }
   },
@@ -75,7 +75,7 @@
       "description": "Comprehensive floor care for all room types.",
       "price": "65.00",
       "category": 1,
-      "avg_rating": 4.8,
+       
       "is_active": true
     }
   },
@@ -87,7 +87,7 @@
       "description": "Emptying all bins and replacing liners.",
       "price": "15.00",
       "category": 1,
-      "avg_rating": 4.2,
+       
       "is_active": true
     }
   },
@@ -99,7 +99,7 @@
       "description": "Cleaning toilets, sinks, and mirrors.",
       "price": "40.00",
       "category": 1,
-      "avg_rating": 4.7,
+       
       "is_active": true
     }
   },
@@ -111,7 +111,7 @@
       "description": "Straightening pillows, blankets, and decor.",
       "price": "25.00",
       "category": 1,
-      "avg_rating": 4.4,
+       
       "is_active": true
     }
   },
@@ -123,7 +123,7 @@
       "description": "Polishing wood and stone surfaces.",
       "price": "30.00",
       "category": 1,
-      "avg_rating": 4.6,
+       
       "is_active": true
     }
   },
@@ -135,7 +135,7 @@
       "description": "Removing scuffs and marks from interior walls.",
       "price": "120.00",
       "category": 2,
-      "avg_rating": 4.3,
+       
       "is_active": true
     }
   },
@@ -147,7 +147,7 @@
       "description": "Hand-wiping every inch of baseboards.",
       "price": "55.00",
       "category": 2,
-      "avg_rating": 4.9,
+       
       "is_active": true
     }
   },
@@ -159,7 +159,7 @@
       "description": "Steam cleaning bathroom and kitchen grout.",
       "price": "90.00",
       "category": 2,
-      "avg_rating": 4.8,
+       
       "is_active": true
     }
   },
@@ -171,7 +171,7 @@
       "description": "Moving heavy items to clean hidden areas.",
       "price": "75.00",
       "category": 2,
-      "avg_rating": 4.5,
+       
       "is_active": true
     }
   },
@@ -183,7 +183,7 @@
       "description": "Deep cleaning of blades and motor housing.",
       "price": "35.00",
       "category": 2,
-      "avg_rating": 4.1,
+       
       "is_active": true
     }
   },
@@ -195,7 +195,7 @@
       "description": "Cleaning intake and output registers.",
       "price": "45.00",
       "category": 2,
-      "avg_rating": 4.4,
+       
       "is_active": true
     }
   },
@@ -207,7 +207,7 @@
       "description": "Detailing all frames and hardware.",
       "price": "20.00",
       "category": 2,
-      "avg_rating": 4.7,
+       
       "is_active": true
     }
   },
@@ -219,7 +219,7 @@
       "description": "Eco-friendly removal of baked-on grease.",
       "price": "60.00",
       "category": 3,
-      "avg_rating": 4.9,
+       
       "is_active": true
     }
   },
@@ -231,7 +231,7 @@
       "description": "Complete removal of shelves and sanitization.",
       "price": "55.00",
       "category": 3,
-      "avg_rating": 4.8,
+       
       "is_active": true
     }
   },
@@ -243,7 +243,7 @@
       "description": "Cleaning filters and interior cycles.",
       "price": "40.00",
       "category": 3,
-      "avg_rating": 4.2,
+       
       "is_active": true
     }
   },
@@ -255,7 +255,7 @@
       "description": "Wiping down the exterior of all kitchen cabinets.",
       "price": "70.00",
       "category": 3,
-      "avg_rating": 4.5,
+       
       "is_active": true
     }
   },
@@ -267,7 +267,7 @@
       "description": "Quick steam and wipe of microwave cavity.",
       "price": "15.00",
       "category": 3,
-      "avg_rating": 4.6,
+       
       "is_active": true
     }
   },
@@ -279,7 +279,7 @@
       "description": "Sorting items and wiping shelves.",
       "price": "80.00",
       "category": 3,
-      "avg_rating": 4.4,
+       
       "is_active": true
     }
   },
@@ -291,7 +291,7 @@
       "description": "Removing carbon buildup from burners.",
       "price": "30.00",
       "category": 3,
-      "avg_rating": 4.7,
+       
       "is_active": true
     }
   },
@@ -303,7 +303,7 @@
       "description": "Top-to-bottom clean of every square inch.",
       "price": "300.00",
       "category": 4,
-      "avg_rating": 5.0,
+  
       "is_active": true
     }
   },
@@ -315,7 +315,7 @@
       "description": "Vacuuming and dusting empty closets.",
       "price": "40.00",
       "category": 4,
-      "avg_rating": 4.3,
+       
       "is_active": true
     }
   },
@@ -327,7 +327,7 @@
       "description": "Cleaning the inside of all empty drawers.",
       "price": "65.00",
       "category": 4,
-      "avg_rating": 4.6,
+       
       "is_active": true
     }
   },
@@ -339,7 +339,7 @@
       "description": "Cleaning the floors behind large appliances.",
       "price": "50.00",
       "category": 4,
-      "avg_rating": 4.8,
+       
       "is_active": true
     }
   },
@@ -351,7 +351,7 @@
       "description": "Streak-free cleaning of all indoor glass.",
       "price": "100.00",
       "category": 5,
-      "avg_rating": 4.9,
+       
       "is_active": true
     }
   },
@@ -363,7 +363,7 @@
       "description": "Removing dirt and insects from tracks.",
       "price": "40.00",
       "category": 5,
-      "avg_rating": 4.2,
+       
       "is_active": true
     }
   },
@@ -375,7 +375,7 @@
       "description": "Detailing large wall and vanity mirrors.",
       "price": "20.00",
       "category": 5,
-      "avg_rating": 4.7,
+       
       "is_active": true
     }
   },
@@ -387,7 +387,7 @@
       "description": "Hand dusting slats on all window blinds.",
       "price": "60.00",
       "category": 5,
-      "avg_rating": 4.1,
+       
       "is_active": true
     }
   },
@@ -399,7 +399,7 @@
       "description": "Cleaning sliding and French doors.",
       "price": "30.00",
       "category": 5,
-      "avg_rating": 4.8,
+       
       "is_active": true
     }
   },
@@ -411,7 +411,7 @@
       "description": "Standard laundry load service.",
       "price": "25.00",
       "category": 6,
-      "avg_rating": 4.6,
+       
       "is_active": true
     }
   },
@@ -423,7 +423,7 @@
       "description": "Stripping and remaking beds.",
       "price": "15.00",
       "category": 6,
-      "avg_rating": 4.9,
+       
       "is_active": true
     }
   },
@@ -435,7 +435,7 @@
       "description": "Pressing shirts and trousers.",
       "price": "35.00",
       "category": 6,
-      "avg_rating": 4.4,
+       
       "is_active": true
     }
   },
@@ -447,7 +447,7 @@
       "description": "Washing and decorative folding of towels.",
       "price": "10.00",
       "category": 6,
-      "avg_rating": 4.7,
+       
       "is_active": true
     }
   },
@@ -459,7 +459,7 @@
       "description": "Removing mold and dirt from outdoor tiles.",
       "price": "150.00",
       "category": 7,
-      "avg_rating": 4.8,
+       
       "is_active": true
     }
   },
@@ -471,7 +471,7 @@
       "description": "Debris removal and floor cleaning.",
       "price": "45.00",
       "category": 7,
-      "avg_rating": 4.2,
+       
       "is_active": true
     }
   },
@@ -483,7 +483,7 @@
       "description": "Fast recovery after home events.",
       "price": "180.00",
       "category": 7,
-      "avg_rating": 4.9,
+       
       "is_active": true
     }
   },
@@ -495,7 +495,7 @@
       "description": "Specialized upholstery treatment for fur.",
       "price": "70.00",
       "category": 7,
-      "avg_rating": 4.7,
+       
       "is_active": true
     }
   },
@@ -507,7 +507,7 @@
       "description": "Arranging food items by expiration.",
       "price": "30.00",
       "category": 3,
-      "avg_rating": 4.3,
+       
       "is_active": true
     }
   },
@@ -519,7 +519,7 @@
       "description": "Cleaning and sorting footwear entryways.",
       "price": "20.00",
       "category": 7,
-      "avg_rating": 4.5,
+       
       "is_active": true
     }
   },
@@ -531,7 +531,6 @@
       "description": "Dusting entryway and shaking out mats.",
       "price": "15.00",
       "category": 7,
-      "avg_rating": 4.6,
       "is_active": true
     }
   }
