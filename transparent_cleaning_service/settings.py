@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 from decouple import config
 
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "debug_toolbar",
     'rest_framework',
+    'django_filters',
+    'djoser',
     'api',
     'cart',
     'order',
@@ -139,8 +142,23 @@ MEDIA_ROOT = BASE_DIR / 'media'
 FIXTURE_DIRS = [BASE_DIR / 'fixtures']
 
 REST_FRAMEWORK = {
-    # 'COERCE_DECIMAL_TO_STRING' : False,
+    'COERCE_DECIMAL_TO_STRING' : False,
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
 
+SIMPLE_JWT = {
+   'AUTH_HEADER_TYPES': ('JWT',),
+   "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+}
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user_create': 'users.serializers.UserCreateSerializer', 
+        'user': 'users.serializers.UserSerializer',   
+        'current_user': 'users.serializers.UserSerializer',   
+    },
 }
