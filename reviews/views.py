@@ -4,11 +4,13 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.exceptions import ValidationError
 from reviews.serializers import ReviewSerializer
 from reviews.models import Review
+from reviews.permissions import IsReviewAuthorOrReadOnly
 
 # Create your views here.
 class ReviewViewSet(ModelViewSet):
     serializer_class = ReviewSerializer
     queryset = Review.objects.all()
+    permission_classes = [IsReviewAuthorOrReadOnly]
     
     def perform_create(self, serializer):
         try:

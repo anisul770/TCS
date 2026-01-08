@@ -15,6 +15,12 @@ class ServiceSerializer(serializers.ModelSerializer):
         model = Service
         fields = ['id','name','description','price','category','avg_rating','is_active']
         
+class AddServiceSerializer(serializers.ModelSerializer):
+    avg_rating = serializers.FloatField(read_only = True)
+    class Meta:
+        model = Service
+        fields = ['id','name','description','price','category','avg_rating','is_active']
+        
         
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:

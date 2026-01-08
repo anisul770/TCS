@@ -6,11 +6,13 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from cart.serializers import CartSerializer,CartItemSerializer,AddCartItemSerializer,UpdateCartItemSerializer
 from cart.models import Cart,CartItem
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
 class CartViewSet(CreateModelMixin,RetrieveModelMixin,DestroyModelMixin,GenericViewSet,ListModelMixin):
     serializer_class = CartSerializer
+    permission_classes = [IsAuthenticated]
     
     def perform_create(self, serializer):
         try:
@@ -19,7 +21,7 @@ class CartViewSet(CreateModelMixin,RetrieveModelMixin,DestroyModelMixin,GenericV
             raise ValidationError({'details':'You already have a cart'})
         
     def get_queryset(self):
-        return Cart.objects.prefetch_related('items').prefetch_related('items__service').all()
+        return Cart.objects.prefetch_related('items').prefetch_related('items__service').filter(user=self.request.user)
     
 class CartItemViewSet(ModelViewSet):
     queryset = CartItem.objects.all()
