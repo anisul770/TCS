@@ -20,4 +20,6 @@ class ReviewViewSet(ModelViewSet):
         
     
     def get_queryset(self):
+        if getattr(self,'swagger_fake_view',False):
+            return super().get_queryset()
         return Review.objects.filter(service_id = self.kwargs.get('service_pk'))

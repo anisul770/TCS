@@ -4,6 +4,9 @@ from cart.serializers import SimpleServiceSerializer
 from cart.models import Cart,CartItem
 from order.services import OrderService
 
+class EmptySerializer(serializers.Serializer):
+    pass
+
 class OrderItemSerializer(serializers.ModelSerializer):
     service = SimpleServiceSerializer(read_only=True)
     class Meta:
@@ -21,8 +24,8 @@ class CreateOrderSerializer(serializers.Serializer):
         return cart_id
     
     def create(self,validated_data):
-        user_id = self.context['user_id']
-        cart_id = validated_data['cart_id']
+        user_id = self.context.get('user_id')
+        cart_id = validated_data.get('cart_id')
         try:
             order = OrderService.create_order(user_id=user_id, cart_id=cart_id)
             return order
@@ -37,14 +40,6 @@ class UpdateOrderSerializer(serializers.ModelSerializer):
         model = Order
         fields = ['status']
         
-    def update(self,instance,validated_data):
-        user = self.context['user']
-        new_status = validated_data['status']
-        if new_status == Order.CANCELED:
-            return OrderService.cancel_order(order=instance,user=user)
-        if not user.is_staff:
-            return serializers.ValidationError('You are not authorized')
-        return super().update(instance,validated_data)
         
 class OrderSerializer(serializers.ModelSerializer):
     items = OrderItemSerializer(many = True)

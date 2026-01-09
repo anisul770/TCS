@@ -1,13 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from users.managers import CustomUserManager
+from users.validators import validate_file_size
 
 # Create your models here.
 class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True)
     bio = models.TextField(blank=True,null=True)
-    profile_pic = models.ImageField(upload_to='user/profile',blank=True,null=True)
+    profile_pic = models.ImageField(upload_to='user/profile',blank=True,null=True,validators=[validate_file_size])
     phone_number = models.CharField(max_length=15,blank=True,null=True)
     facebook_link = models.URLField(blank=True,null=True)
     

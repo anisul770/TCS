@@ -40,16 +40,17 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'drf_yasg',
     "debug_toolbar",
     'rest_framework',
     'django_filters',
     'djoser',
     'api',
+    'services',
+    'reviews',
     'cart',
     'order',
     'payments',
-    'reviews',
-    'services',
     'users',
 ]
 
@@ -161,4 +162,15 @@ DJOSER = {
         'user': 'users.serializers.UserSerializer',   
         'current_user': 'users.serializers.UserSerializer',   
     },
+}
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': 'Enter your JWT token in the format: `JWT <your_token>`'
+      }
+   }
 }

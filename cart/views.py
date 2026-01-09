@@ -21,6 +21,8 @@ class CartViewSet(CreateModelMixin,RetrieveModelMixin,DestroyModelMixin,GenericV
             raise ValidationError({'details':'You already have a cart'})
         
     def get_queryset(self):
+        if getattr(self,'swagger_fake_view',False):
+            return Cart.objects.none()
         return Cart.objects.prefetch_related('items').prefetch_related('items__service').filter(user=self.request.user)
     
 class CartItemViewSet(ModelViewSet):
@@ -34,9 +36,13 @@ class CartItemViewSet(ModelViewSet):
         return CartItemSerializer
     
     def get_serializer_context(self):
+        if getattr(self,'swagger_fake_view',False):
+            return super().get_serializer_context()
         return {'cart_id':self.kwargs.get('cart_pk')}
     
     def get_queryset(self):
+        if getattr(self,'swagger_fake_view',False):
+            return CartItem.objects.none()
         return CartItem.objects.select_related('service').filter(cart_id = self.kwargs.get('cart_pk'))
     
     

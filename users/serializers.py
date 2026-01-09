@@ -1,6 +1,6 @@
-from rest_framework import serializers
 from djoser.serializers import UserCreateSerializer as BaseUserCreateSerializer
 from djoser.serializers import UserSerializer as BaseUserSerializer
+from order.serializers import OrderSerializer
 
 class UserCreateSerializer(BaseUserCreateSerializer):
     class Meta(BaseUserCreateSerializer.Meta):
@@ -8,5 +8,7 @@ class UserCreateSerializer(BaseUserCreateSerializer):
         
 
 class UserSerializer(BaseUserSerializer):
+    order = OrderSerializer(many=True,read_only=True)
     class Meta(BaseUserSerializer.Meta):
-        fields = ['id','email','first_name','last_name','phone_number','bio','profile_pic','facebook_link']
+        ref_name = 'CustomUser'
+        fields = ['id','email','first_name','last_name','phone_number','bio','profile_pic','facebook_link','order']
