@@ -11,7 +11,7 @@ router.register('services',ServiceViewSet,basename='services')
 router.register('categories',CategoryViewSet)
 router.register('carts',CartViewSet,basename='carts')
 router.register('orders',OrderViewSet,basename='orders')
-router.register("users", UserViewSet, basename="custom-users")
+router.register("auth/users", UserViewSet, basename="custom-users")
 
 service_router = routers.NestedDefaultRouter(router,'services',lookup='service')
 service_router.register('reviews',ReviewViewSet,basename='review')

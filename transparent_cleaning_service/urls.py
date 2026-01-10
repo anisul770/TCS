@@ -28,7 +28,7 @@ schema_view = get_schema_view(
    openapi.Info(
       title="Transparent Cleaning Service API",
       default_version='v1',
-      description="API documentation for TCS Project",
+      description="API Documentation for TCS Project",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="contact@tcs.com"),
       license=openapi.License(name="BSD License"),

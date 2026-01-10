@@ -9,16 +9,15 @@ from order.services import OrderService
 # Create your views here.
 
 class OrderViewSet(ModelViewSet):
-    permission_classes = [IsAuthenticated]
     http_method_names = ['get','post','delete','patch','head','options']
     
-    @action(detail=True,methods=['post'],permission_classes=[IsAuthenticated])
+    @action(detail=True,methods=['post'])
     def cancel(self,request,pk=None):
         order = self.get_object()
         OrderService.cancel_order(order=order,user=request.user)
         return Response({'status' : 'Order Canceled'})
     
-    @action(detail=True,methods=['patch'],permission_classes=[IsAdminUser])
+    @action(detail=True,methods=['patch'])
     def update_status(self,request,pk=None):
         order = self.get_object()
         serializer = UpdateOrderSerializer(order,data=request.data,partial=True)

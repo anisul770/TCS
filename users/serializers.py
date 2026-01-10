@@ -1,6 +1,7 @@
 from djoser.serializers import UserCreateSerializer as BaseUserCreateSerializer
 from djoser.serializers import UserSerializer as BaseUserSerializer
 from order.serializers import OrderSerializer
+from django.contrib.auth import get_user_model
 
 class UserCreateSerializer(BaseUserCreateSerializer):
     class Meta(BaseUserCreateSerializer.Meta):
@@ -12,3 +13,5 @@ class UserSerializer(BaseUserSerializer):
     class Meta(BaseUserSerializer.Meta):
         ref_name = 'CustomUser'
         fields = ['id','email','first_name','last_name','phone_number','bio','profile_pic','facebook_link','order']
+class AdminSetSerializer(BaseUserSerializer):
+    pass
