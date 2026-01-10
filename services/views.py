@@ -37,6 +37,7 @@ class ServiceViewSet(ModelViewSet):
         return super().list(request, *args, **kwargs)
     
     @swagger_auto_schema(
+        operation_summary='Create new services by Admin',
         operation_description="Add new service by Admin"
     )
     def create(self, request, *args, **kwargs):
@@ -47,8 +48,76 @@ class ServiceViewSet(ModelViewSet):
             return ServiceSerializer
         return AddServiceSerializer
     
+    @swagger_auto_schema(
+        operation_summary='Show a service details'
+    )
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Update service details by admin'
+    )
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Delete a service by admin'
+    )
+    def destroy(self, request, *args, **kwargs):
+        return super().destroy(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Partial update service info by admin'
+    )
+    def partial_update(self, request, *args, **kwargs):
+        return super().partial_update(request, *args, **kwargs)
+    
     
 class CategoryViewSet(ModelViewSet):
+    """
+    This is The API Endpoint for managing Category
+    - Allow admin to manage all Category
+    - Allows users to browse through the available Category
+    """
     serializer_class = CategorySerializer
     queryset = Category.objects.annotate(service_count = Count('services')).all()
     permission_classes = [IsAdminOrReadOnly]
+    
+    @swagger_auto_schema(
+        operation_summary='Show all the Category'
+    )
+    def list(self, request, *args, **kwargs):
+        """Retrieve All the Category"""
+        return super().list(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Create new category by Admin'
+    )
+    def create(self, request, *args, **kwargs):
+        return super().create(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Show the specific category details'
+    )
+    def retrieve(self, request, *args, **kwargs):
+        return super().retrieve(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Update specific category details by admin'
+    )
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Partial update specific category by admin'
+    )
+    def partial_update(self, request, *args, **kwargs):
+        return super().partial_update(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+        operation_summary='Delete specific category by admin'
+    )
+    def destroy(self, request, *args, **kwargs):
+        return super().destroy(request, *args, **kwargs)
+    
+    

@@ -27,4 +27,4 @@ class CategorySerializer(serializers.ModelSerializer):
         model = Category
         fields = ['id','name','description','service_count']
         
-    service_count = serializers.IntegerField(read_only = True)
+    service_count = serializers.IntegerField(read_only = True,help_text='Show the total services in this category')
