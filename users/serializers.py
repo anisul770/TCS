@@ -15,6 +15,7 @@ class UserSerializer(BaseUserSerializer):
     profile_pic = serializers.ImageField()
     class Meta(BaseUserSerializer.Meta):
         ref_name = 'CustomUser'
-        fields = ['id','email','first_name','last_name','phone_number','bio','profile_pic','facebook_link','order']
+        fields = ['id','email','first_name','last_name','phone_number','bio','profile_pic','facebook_link','order','is_staff']
+        read_only_fields =['is_staff']
 class AdminSetSerializer(BaseUserSerializer):
     pass

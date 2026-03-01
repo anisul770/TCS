@@ -27,7 +27,7 @@ class UserViewSet(uv):
             })
         
     @swagger_auto_schema(
-        operation_summary='Show all the users to Admin only otherwise only the user'
+        operation_summary='Show all the users to Admin otherwise only the user'
     )
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
