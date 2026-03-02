@@ -5,9 +5,10 @@ from order.serializers import OrderSerializer
 from django.contrib.auth import get_user_model
 
 class UserCreateSerializer(BaseUserCreateSerializer):
-    profile_pic = serializers.ImageField()
+    profile_pic = serializers.ImageField(required= False,allow_null=True)
     class Meta(BaseUserCreateSerializer.Meta):
         fields = ['id','email','password','first_name','last_name','phone_number','bio','profile_pic','facebook_link']
+        
         
 
 class UserSerializer(BaseUserSerializer):
@@ -17,5 +18,6 @@ class UserSerializer(BaseUserSerializer):
         ref_name = 'CustomUser'
         fields = ['id','email','first_name','last_name','phone_number','bio','profile_pic','facebook_link','order','is_staff']
         read_only_fields =['is_staff']
+
 class AdminSetSerializer(BaseUserSerializer):
     pass
