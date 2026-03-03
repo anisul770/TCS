@@ -53,7 +53,7 @@ class CartViewSet(CreateModelMixin,RetrieveModelMixin,DestroyModelMixin,GenericV
     def get_queryset(self):
         if getattr(self,'swagger_fake_view',False):
             return Cart.objects.none()
-        return Cart.objects.prefetch_related('items').prefetch_related('items__service').filter(user=self.request.user)
+        return Cart.objects.prefetch_related('items').prefetch_related('items__service__category').filter(user=self.request.user)
     
 class CartItemViewSet(ModelViewSet):
     queryset = CartItem.objects.all()
