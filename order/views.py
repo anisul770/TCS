@@ -92,7 +92,7 @@ class OrderViewSet(ModelViewSet):
 class HasOrderedService(APIView):
   permission_classes = [IsAuthenticated]
   
-  def get(self, request, product_id):
+  def get(self, request, service_id):
     user = request.user
-    has_ordered = OrderItem.objects.filter(order__user=user, product_id=product_id).exists()
+    has_ordered = OrderItem.objects.filter(order__user=user, service_id=service_id).exists()
     return Response({"hasOrdered": has_ordered})    
