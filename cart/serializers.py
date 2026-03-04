@@ -1,7 +1,12 @@
 from rest_framework import serializers
 from cart.models import Cart,CartItem
-from services.models import Service
+from services.models import Service,Category
 from services.serializers import SimpleCategorySerializer
+
+# class SimpleCategorySerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Category
+#         fields = ['id','name','description']
 
 class SimpleServiceSerializer(serializers.ModelSerializer):
     category = SimpleCategorySerializer()

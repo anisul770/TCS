@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.decorators import action
+from rest_framework.decorators import APIView, action
 from rest_framework.response import Response
 from order.serializers import OrderSerializer,OrderItemSerializer,CreateOrderSerializer,UpdateOrderSerializer,EmptySerializer
 from order.models import Order,OrderItem
@@ -89,3 +89,10 @@ class OrderViewSet(ModelViewSet):
     def list(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
     
+class HasOrderedService(APIView):
+  permission_classes = [IsAuthenticated]
+  
+  def get(self, request, product_id):
+    user = request.user
+    has_ordered = OrderItem.objects.filter(order__user=user, product_id=product_id).exists()
+    return Response({"hasOrdered": has_ordered})    
