@@ -25,7 +25,7 @@ urlpatterns = [
     path('',include(cart_router.urls)),
     path('',include(service_router.urls)),
     path('auth/', include('djoser.urls.jwt')),
-    path('services/has-ordered/<int:product_id>/', HasOrderedService.as_view(),name="order-check"),
+    path('services/has-ordered/<int:service_id>/', HasOrderedService.as_view(),name="order-check"),
     path('payment/initiate/', initiate_payment,name="initiate-payment"),
     path('payment/success/', payment_success,name="payment-success"), 
     path('payment/fail/', payment_fail,name="payment-fail"), 
