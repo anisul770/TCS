@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.db import IntegrityError
+from rest_framework.response import Response
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.exceptions import ValidationError
 from reviews.serializers import ReviewSerializer
+from rest_framework.decorators import action
 from reviews.models import Review
 from reviews.permissions import IsReviewAuthorOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 from drf_yasg.utils import swagger_auto_schema
+from reviews.filters import ReviewFilter
 
 # Create your views here.
 class ReviewViewSet(ModelViewSet):
@@ -60,3 +65,22 @@ class ReviewViewSet(ModelViewSet):
     )
     def retrieve(self, request, *args, **kwargs):
         return super().retrieve(request, *args, **kwargs)
+      
+class AllReview(ModelViewSet):
+    serializer_class = ReviewSerializer
+    # This ensures only the author can EDIT/DELETE, but anyone can VIEW
+    filter_backends = [DjangoFilterBackend]
+    permission_classes = [IsReviewAuthorOrReadOnly] 
+    filterset_class = ReviewFilter   
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Review.objects.none()
+        return Review.objects.select_related('user').select_related('service').all().order_by('-created_at')
+      
+    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
+    def mine(self, request):
+        # This uses the user identified by the JWT token in the header
+        queryset = Review.objects.filter(user=request.user).select_related('service').order_by('-created_at')
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)

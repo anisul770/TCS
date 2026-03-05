@@ -2,7 +2,7 @@ from django.urls import path,include
 from rest_framework_nested import routers
 from cart.views import CartViewSet,CartItemViewSet
 from services.views import ServiceViewSet,CategoryViewSet
-from reviews.views import ReviewViewSet
+from reviews.views import ReviewViewSet,AllReview
 from order.views import OrderViewSet,HasOrderedService
 from users.views import UserViewSet
 from payments.views import initiate_payment,payment_success,payment_cancel,payment_fail
@@ -12,6 +12,7 @@ router.register('services',ServiceViewSet,basename='services')
 router.register('categories',CategoryViewSet)
 router.register('carts',CartViewSet,basename='carts')
 router.register('orders',OrderViewSet,basename='orders')
+router.register('all_reviews',AllReview,basename='all-review')
 router.register("auth/users", UserViewSet, basename="custom-users")
 
 service_router = routers.NestedDefaultRouter(router,'services',lookup='service')
@@ -30,4 +31,5 @@ urlpatterns = [
     path('payment/success/', payment_success,name="payment-success"), 
     path('payment/fail/', payment_fail,name="payment-fail"), 
     path('payment/cancel/', payment_cancel,name="payment-cancel"), 
+    
 ]
