@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.exceptions import ValidationError
-from reviews.serializers import ReviewSerializer
+from reviews.serializers import ReviewSerializer,AllReviewSerializer
 from rest_framework.decorators import action
 from reviews.models import Review
 from reviews.permissions import IsReviewAuthorOrReadOnly
@@ -67,7 +67,7 @@ class ReviewViewSet(ModelViewSet):
         return super().retrieve(request, *args, **kwargs)
       
 class AllReview(ModelViewSet):
-    serializer_class = ReviewSerializer
+    serializer_class = AllReviewSerializer
     # This ensures only the author can EDIT/DELETE, but anyone can VIEW
     filter_backends = [DjangoFilterBackend]
     permission_classes = [IsReviewAuthorOrReadOnly] 
@@ -76,7 +76,7 @@ class AllReview(ModelViewSet):
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Review.objects.none()
-        return Review.objects.select_related('user').select_related('service').all().order_by('-created_at')
+        return Review.objects.select_related('user','service').prefetch_related('service__category').all().order_by('-created_at')
       
     @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
     def mine(self, request):

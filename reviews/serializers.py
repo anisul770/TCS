@@ -1,6 +1,7 @@
 from reviews.models import Review
 from rest_framework import serializers
 from users.models import User
+from cart.serializers import SimpleServiceSerializer
 
 class SimplerUserSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField(
@@ -15,6 +16,14 @@ class SimplerUserSerializer(serializers.ModelSerializer):
 
 class ReviewSerializer(serializers.ModelSerializer):
     user = SimplerUserSerializer(read_only=True)
+    class Meta:
+        model = Review
+        fields = ['id','service','user','rating','comment','created_at','updated_at']
+        read_only_fields = ['created_at','updated_at','service','user']
+        
+class AllReviewSerializer(serializers.ModelSerializer):
+    user = SimplerUserSerializer(read_only=True)
+    service = SimpleServiceSerializer(read_only=True)
     class Meta:
         model = Review
         fields = ['id','service','user','rating','comment','created_at','updated_at']
