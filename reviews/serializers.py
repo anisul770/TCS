@@ -7,6 +7,7 @@ class SimplerUserSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField(
         method_name="get_current_user_name"
     )
+    profile_pic = serializers.ImageField()
     class Meta:
         model = User
         fields = ['id','name','profile_pic']
