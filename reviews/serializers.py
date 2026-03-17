@@ -9,7 +9,7 @@ class SimplerUserSerializer(serializers.ModelSerializer):
     )
     class Meta:
         model = User
-        fields = ['id','name']
+        fields = ['id','name','profile_pic']
     
     def get_current_user_name(self,obj):
         return obj.get_full_name()
